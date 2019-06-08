@@ -1,4 +1,5 @@
 {
   "text1": "hello",
-  "text2": "world"
+  "text2": "world",
+  "isIt": true
 }

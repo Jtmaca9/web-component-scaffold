@@ -4,8 +4,8 @@
   const props = $propStore;
   const propList = Object.keys(props);
 
-  function onInputChange(evt, field) {
-    propStore.updateProps({ [field]: evt.target.value });
+  function onInputChange(field, value) {
+    propStore.updateProps({ [field]: value });
   }
 
 </script>
@@ -26,11 +26,19 @@
 	{#each propList as prop, i}
 		<div class="knobContainer">
       {prop}:
-      <input
-        type="text"
-        class="inputBar"
-        on:input={(evt) => onInputChange(evt, prop)}
-        value={props[prop]} />
+      {#if typeof props[prop] === 'string'}
+         <input
+          type="text"
+          class="inputBar"
+          on:input={(evt) => onInputChange(prop, evt.target.value)}
+          value={props[prop]} />
+      {:else if typeof props[prop] === 'boolean'}
+        <input
+          type="checkbox"
+          class="inputBar"
+          on:change={(evt) => onInputChange(prop, evt.target.checked)}
+          checked={props[prop]} />
+      {/if}
     </div>
 	{/each}
 </div>
