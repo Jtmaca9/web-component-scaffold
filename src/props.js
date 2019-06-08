@@ -1,17 +1,13 @@
 import { writable } from 'svelte/store';
 
-
-const initialProps = {
-  text1: 'hello',
-  text2: 'world',
-};
+import initialProps from './MyComponent/props.json';
 
 function createProps() {
   const { subscribe, set, update } = writable(initialProps);
 
   return {
     subscribe,
-    updateProps: (props) => update(n => Object.assign({}, n, props)),
+    updateProps: props => update(n => Object.assign({}, n, props)),
     reset: () => set(initialProps)
   };
 }

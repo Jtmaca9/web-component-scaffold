@@ -1,8 +1,8 @@
 
 
 <script>
-  import DevBar from './Components/DevBar/DevBar.svelte';
-  import MyComponent from './Components/MyComponent/Component.svelte';
+  import DevBar from './DevBar/DevBar.svelte';
+  import MyComponent from './MyComponent/Component.svelte';
   import { props } from './props.js';
 </script>
 
