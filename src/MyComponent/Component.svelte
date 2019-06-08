@@ -3,4 +3,4 @@
 	export let text2;
 </script>
 
-<h1>Hello {text2}!</h1>
+<h1>{text1} {text2}!</h1>

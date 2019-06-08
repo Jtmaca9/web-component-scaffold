@@ -1,5 +1,8 @@
 <script>
   import CloseButton from './CloseButton.svelte';
+  import Knobs from './Knobs.svelte';
+
+  export let props;
 
   let open = true;
   function handleClicked() {
@@ -29,4 +32,5 @@
 
 <div class="sideBarContainer {open ? 'open' : 'close'}">
   <CloseButton on:clicked={handleClicked} />
+  <Knobs />
 </div>
